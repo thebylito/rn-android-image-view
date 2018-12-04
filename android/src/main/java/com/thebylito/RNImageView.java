@@ -64,8 +64,10 @@ public class RNImageView extends FrameLayout {
     public void init() {
         RelativeLayout.LayoutParams math = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         RelativeLayout.LayoutParams mathImage = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+
         ImageView img = new ImageView(mContext);
-        Picasso.with(getContext()).load(mUri).into(img);
+        Picasso.with(getContext()).load(mUri).fit()
+                .centerCrop().into(img);
 
        /* TextView textView = new TextView(mContext);
         textView.setText("hello world");
