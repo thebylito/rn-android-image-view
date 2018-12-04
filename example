@@ -1,0 +1,71 @@
+import React, { Component } from 'react';
+import {
+  StyleSheet,
+  View,
+  Button,
+  Image,
+  Dimensions,
+  PermissionsAndroid,
+} from 'react-native';
+import ImagePicker from 'react-native-image-crop-picker';
+import RNImageView from 'rn-android-image-view';
+const Image1 =
+  'file:///storage/emulated/0/Pictures/1c8f29f1-5853-4049-bcfe-f88a0ebce2cc-compressed.jpg';
+const Image2 = require('./images.png');
+
+const width = Dimensions.get('window').width / 2 - 20;
+const height = width * 1.3;
+
+export default class App extends Component {
+  componentDidMount = async () => {
+    await PermissionsAndroid.requestMultiple([
+      PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+      PermissionsAndroid.PERMISSIONS.CAMERA,
+    ]);
+    console.tron.log({ width, height });
+  };
+  onCamera = async () => {
+    const image = await ImagePicker.openCamera({
+      cropping: true,
+      compressImageQuality: 0.5,
+    });
+    console.tron.log(image);
+  };
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.view}>
+          <View style={styles.images}>
+            <RNImageView source={{ uri: Image1 }} style={styles.images2} />
+          </View>
+          <View style={styles.images}>
+            <RNImageView source={Image2} style={styles.images2} />
+          </View>
+          <View style={styles.images}>
+            <RNImageView source={Image2} style={styles.images2} />
+          </View>
+        </View>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'green',
+  },
+  images2: {
+    width,
+    height,
+    marginTop: 5,
+  },
+  view: {
+    flex: 1,
+    justifyContent: 'space-around',
+    //margin: 10,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'flex-start',
+  },
+});
