@@ -1,0 +1,38 @@
+{
+  "author": {
+    "name": "Welington da Silva",
+    "email": "thebylito@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/thebylito/react-native-image-view/issues"
+  },
+  "description": "## Getting started",
+  "devDependencies": {
+    "prop-types": "^15.6.2",
+    "react": "16.6.3",
+    "react-native": "^0.57.7"
+  },
+  "homepage": "https://github.com/thebylito/react-native-image-view#readme",
+  "keywords": [
+    "react-native"
+  ],
+  "license": "Apache-2.0",
+  "licenseFilename": "LICENSE",
+  "main": "index.js",
+  "name": "rn-android-image-view",
+  "peerDependencies": {
+    "react": "16.6.3",
+    "prop-types": "^15.6.2",
+    "react-native": "^0.57.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebylito/react-native-image-view.git",
+    "baseUrl": "https://github.com/thebylito/react-native-image-view"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "title": "React Native Image View",
+  "version": "1.0.1"
+}
